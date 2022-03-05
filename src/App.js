@@ -23,9 +23,7 @@ export default function App({ $target }) {
     console.log(pathname); // '/'
     $target.innerHTML = ''; // root를 깨끗하게 비워주고 원하는걸 넣기위한 작업
     if (pathname === '/') {
-      const [ , , productId] = pathname.split('/');
-      new ProductDetails({ $target, productId }).render();
-      // new MainProductList({ $target }).render();
+      new MainProductList({ $target }).render();
     } else if (pathname.indexOf('/products/') === 0) {
       const [ , , productId] = pathname.split('/');
       new ProductDetails({ $target, productId }).render();
