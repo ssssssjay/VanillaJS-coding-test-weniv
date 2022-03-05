@@ -2,8 +2,7 @@ import { requestProduct } from "../API.js";
 
 export default function MainProductList({ $target }) {
   const $page = document.createElement('section');
-  $page.classList.add('MainProductList');
-
+  $page.classList.add('main-product-list');
   $page.innerHTML = `
     <h1 class='sr-only'>전체상품목록 컴포넌트의 제목입니다.</h1>
     `;
@@ -22,7 +21,10 @@ export default function MainProductList({ $target }) {
     console.log(this.state)
     console.log(this.state[0])
     const $productList = document.createElement('ul')
-    $productList.classList.add('productList');
+    const $btnCart = document.createElement('button')
+    $btnCart.classList.add('btn-cart')
+    $btnCart.innerHTML = `<img src="./assets/icon-shopping-cart.svg">`
+    $productList.classList.add('product-list');
     $page.appendChild($productList)
     /*
     const {thumbnailImg, productName, price} = this.state[0]
@@ -42,21 +44,27 @@ export default function MainProductList({ $target }) {
     $productList.innerHTML = `
       ${this.state.map(product => 
         `
-        <li>
-          <img src="http://35.76.53.28:8080/${product.thumbnailImg}" alt="testIMG">
-          <h2>${product.productName}</h2>
-          <span>
-            <span>${product.price}</span>
-            <span>원</span>
-          </span>
-          <button>❤️</button>
+        <li class='product-item soldout'>
+          <img class='item__img' src="http://35.76.53.28:8080/${product.thumbnailImg}" alt="${product.productName}대표사진">
+          <h2 class='item__name'>${product.productName}
+            <button class='item__btn-like'>
+              <img src="./assets/icon-heart.svg">
+            </button>
+          </h2>
+          <div class'item__price'>
+            <span class='number'>${product.price}</span>
+            <span class='currency'>원</span>
+          </div>
         </li>
         `).join('')}
     `
+    $productList.appendChild($btnCart)
+    /*
     const productList = new MainProductListRender({
       $target : $page,
       initialState : this.state
     })
+    */
   }
   
   // 왜 이렇게 하면 this.state에 initialState가 안박힐까

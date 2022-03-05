@@ -1,0 +1,134 @@
+/* reset */
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+h1 {
+  margin: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  padding: 0;
+}
+button,
+input,
+select,
+textarea {
+  background-color: transparent;
+  border: 0;
+}
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: none;
+}
+a,
+button {
+  cursor: pointer;
+}
+ul,
+ol {
+  padding-left: 0;
+  list-style: none;
+}
+/* module */
+.sr-only {
+  position: absolute;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+}
+/* style */
+.main-product-list {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 160px;
+  max-width: 1260px;
+  position: relative;
+}
+
+.product-item {
+  width: 380px;
+  height: 462px;
+  margin-right: 60px;
+  margin-bottom: 60px;
+  position: relative;
+}
+.product-item:nth-child(3n) {
+  margin-right: 0;
+}
+.product-item:first-child .item__name {
+  font-size: 15px;
+}
+
+.item__img {
+  width: 380px;
+  height: 380px;
+  margin-bottom: 20px;
+  border: 1px solid #BDBDBD;
+  border-radius: 10px;
+  position: relative;
+}
+/* 매진 구현 */
+/*
+.product-item.soldout::before {
+  display: block;
+  position: absolute;
+  content: '';
+  width: 380px;
+  height: 380px;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+*/
+.item__name {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.item__price {}
+
+.number {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+}
+
+.item__currency {}
+.item__btn-like {}
+.item__btn-like img {}
+
+.btn-cart {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #6327FE;
+  position: absolute;
+  top: 0;
+  right: -140px;
+  z-index: 10;
+  padding: 23px 22px 17px 18px;
+}
+.btn-cart img {
+  width: 40px;
+}
