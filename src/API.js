@@ -7,11 +7,11 @@
 //   .then(response => response.json())
 //   .then(json => console.log(json))
 
-const PRODUCT_API_IP = 'http://35.76.53.28:8080/mall';
+const PRODUCT_API_IP = 'http://35.76.53.28:8080';
 const COUPON_API_IP = 'http://35.76.53.28:8080/coupon';
 
 const requestProduct = async () => {
-  const productResponse = await fetch(PRODUCT_API_IP);
+  const productResponse = await fetch(`${PRODUCT_API_IP}/mall`);
   const productResponseJson = await productResponse.json();
   return productResponseJson;
 };
