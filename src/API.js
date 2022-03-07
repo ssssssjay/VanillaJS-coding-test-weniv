@@ -10,8 +10,10 @@
 const PRODUCT_API_IP = 'http://35.76.53.28:8080/mall';
 const COUPON_API_IP = 'http://35.76.53.28:8080/coupon';
 
-export const requestProduct = async () => {
+const requestProduct = async () => {
   const productResponse = await fetch(PRODUCT_API_IP);
   const productResponseJson = await productResponse.json();
   return productResponseJson;
 };
+
+export { PRODUCT_API_IP, COUPON_API_IP, requestProduct };

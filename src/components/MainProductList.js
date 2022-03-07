@@ -1,4 +1,4 @@
-import { requestProduct } from "../API.js";
+import { PRODUCT_API_IP, COUPON_API_IP, requestProduct } from "../API.js";
 
 export default function MainProductList({ $target }) {
   const $page = document.createElement('section');
