@@ -130,7 +130,6 @@ ol {
   position: absolute;
   top: 0;
   right: -140px;
-  z-index: 10;
   padding: 23px 22px 17px 18px;
 }
 .btn-cart img {
@@ -148,3 +147,32 @@ ol {
   left: 0;
 }
 */
+
+/* 모달영역 */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.modal-content {
+  width: 990px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 30px auto;
+
+  animation: modal 0.4s;
+}
+
+@keyframes modal {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
