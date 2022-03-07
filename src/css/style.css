@@ -38,7 +38,13 @@ ol {
   padding-left: 0;
   list-style: none;
 }
-/* module */
+/* module? */
+.sl-ellipsis {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .sr-only {
   position: absolute;
 	clip: rect(0 0 0 0);
@@ -71,9 +77,6 @@ ol {
 .product-item:nth-child(3n) {
   margin-right: 0;
 }
-.product-item:first-child .item__name {
-  font-size: 15px;
-}
 
 .item__img {
   width: 380px;
@@ -105,6 +108,7 @@ ol {
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
+  /* max-width: 338px; */
 }
 .item__price {}
 
@@ -132,3 +136,15 @@ ol {
 .btn-cart img {
   width: 40px;
 }
+
+/* 상세페이지 모달 */
+/*
+.item-detail-modal {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+*/
