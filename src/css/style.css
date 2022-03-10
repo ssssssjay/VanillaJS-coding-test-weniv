@@ -119,7 +119,12 @@ ol {
 }
 
 .item__currency {}
-.item__btn-like {}
+.item__btn-like {
+  position: absolute;
+  top: 404px;
+  right: 0;
+  background-color: #fff;
+}
 .item__btn-like img {}
 
 .btn-cart {
@@ -150,16 +155,19 @@ ol {
 
 /* 모달영역 */
 .modal-container {
-  position: fixed;
+  /* position fixed => position absolute으로 바꾸니 스크롤 가능 */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  /* 뒷배경이 시꺼멓게 유지시키려고 높이고정값을 제거 */
+  /* height: 100vh; */
 
   background-color: rgba(0, 0, 0, 0.3);
 }
 .modal-content {
   width: 990px;
+  height: auto;
   background-color: #fff;
   border-radius: 10px;
   margin: 30px auto;
@@ -169,10 +177,39 @@ ol {
 
 @keyframes modal {
   from {
-    transform: translateY(100%);
+    /* transform: translateY(100%); */
+    opacity: 0;
   }
 
   to {
-    transform: translateY(0%);
+    /* transform: translateY(0%); */
+    opacity: 1;
   }
+}
+
+/* 모달 > 컨텐츠영역 */
+.img-product__detail {
+  width: 400px;
+  height: 400px;
+  border-radius: 10px;
+  border: 1px solid #c4c4c4;
+}
+.tit-product__detail {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: normal;
+}
+.section-price {
+  display: flex;
+  align-items: center;
+}
+.price-product__detail {
+  font-family: Spoqa Han Sans Neo;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-right: 2px;
 }
