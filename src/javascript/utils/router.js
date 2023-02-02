@@ -36,9 +36,15 @@ class Router {
     this.routing(window.location.pathname);
 
     window.addEventListener('click', (e) => {
-      e.preventDefault();
-      // TODO: 전역에 이벤트가 걸려있는 현상 해결
-      this.routePush(e.target.href);
+      // if (e.target.tagName.toLowerCase() === 'a') {
+      //   e.preventDefault();
+      //   console.log(e.target.href);
+      //   this.routePush(e.target.href);
+      // }
+      if (e.target.closest('a')) {
+        e.preventDefault();
+        this.routePush(e.target.closest('a').href);
+      }
     });
 
     // 뒤로가기 버튼 눌렀을때
